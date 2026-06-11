@@ -1,0 +1,24 @@
+// refuel where q_init=q0
+// ord=8, n_atoms=-1, out-degree=4
+// 2.1250650882720947 seconds
+digraph finite_state_machine {
+	rankdir=LR;
+	"q0/placement" -> "q1/south" [label="[s1]"]
+	"q1/south" -> "q2/east" [label="[s2, s34]"]
+	"q1/south" -> "q3/north" [label="[s3, s33]"]
+	"q1/south" -> "q7/empty" [label="[s23]"]
+	"q2/east" -> "q5/refuel" [label="[s9]"]
+	"q2/east" -> "q4/west" [label="[s10]"]
+	"q2/east" -> "q2/east" [label="[s39]"]
+	"q2/east" -> "q6/done" [label="[s40, s42]"]
+	"q3/north" -> "q5/refuel" [label="[s6, s9, s18, s28]"]
+	"q3/north" -> "q3/north" [label="[s11]"]
+	"q3/north" -> "q4/west" [label="[s14, s16]"]
+	"q3/north" -> "q7/empty" [label="[s17, s20, s22, s27, s32]"]
+	"q4/west" -> "q5/refuel" [label="[s6, s9, s18, s28]"]
+	"q4/west" -> "q4/west" [label="[s10, s16]"]
+	"q4/west" -> "q7/empty" [label="[s17, s26, s30]"]
+	"q5/refuel" -> "q1/south" [label="[s1, s25]"]
+	"q6/done" -> "q6/done" [label="[s13, s21, s40, s42]"]
+	"q7/empty" -> "q7/empty" [label="[s17, s19, s20, s22, s23, s24, s26, s27, s29, s30, s31, s32]"]
+}

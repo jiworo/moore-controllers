@@ -1,0 +1,13 @@
+// obstacle where q_init=q0
+// ord=3, n_atoms=2, out-degree=3
+// 5302.888477802277 seconds
+digraph finite_state_machine {
+	rankdir=LR;
+	"q0/placement" -> "q1/east" [label=""]
+	"q1/east" -> "q1/east" [label="ax <= 6"]
+	"q1/east" -> "q2/south" [label="ay <= 6 /\ ax >= 7"]
+	"q1/east" -> "q0/placement" [label="ax >= 7 /\ ay >= 7"]
+	"q2/south" -> "q1/east" [label="ay >= 3 /\ ax <= 4"]
+	"q2/south" -> "q2/south" [label="ax >= 6 /\ ay <= 6"]
+	"q2/south" -> "q0/placement" [label="ax >= 3 /\ ay >= 7"]
+}
